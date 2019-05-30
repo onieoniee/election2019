@@ -150,20 +150,11 @@ data_kawal = get_kawal_pemilu()
 
 # %%
 def calculate_pemilih(bps, kawal2014, kawal2019):
-    provinsi = ['aceh', 'sumatera utara', 'sumatera barat', 'riau',
-                'jambi', 'sumatera selatan', 'bengkulu', 'lampung']
-
-    # ambil data bps yang ada di provinsi sumatra
-    # bps = bps[bps['wilayah'].isin(provinsi)]
-
     # ambil 2010
     penduduk = pd.DataFrame({
         'wilayah': bps['wilayah'],
         'penduduk': bps['2010'].astype('int')
     })
-
-    # ambil data kawal2014 pemilu dari provinsi sumatra
-    # kawal2014 = kawal2014[kawal2014['wilayah'].isin(provinsi)]
 
     # jumlahkan pemilih2014
     jumlah_pemilih = kawal2014['jokowi'] + kawal2014['prabowo']
@@ -173,9 +164,6 @@ def calculate_pemilih(bps, kawal2014, kawal2019):
         'wilayah': kawal2014['wilayah'],
         'Golput 2014': golput.fillna(0).astype('int')
     })
-
-    # ambil data kawal2019 pemilu dari provinsi sumatra
-    # kawal2019 = kawal2019[kawal2019['wilayah'].isin(provinsi)]
 
     # jumlahkan pemilih
     jumlah_pemilih2 = kawal2019['jokowi'] + kawal2019['prabowo']
