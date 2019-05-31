@@ -1,13 +1,3 @@
-"""
-================================
-Nearest Neighbors Classification
-================================
-
-Sample usage of Nearest Neighbors classification.
-It will plot the decision boundaries for each class.
-"""
-print(__doc__)
-
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.colors import ListedColormap
