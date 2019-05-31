@@ -20,7 +20,7 @@ data['Golput19'] = data['Golput19'].astype(float)
 # print(data.head())
 # print(data.dtypes)
 
-X = data[['JumlahPenduduk','Kemiskinan','Pendapatan','Golput14','Golput19']]
+X = data[['Golput14','Golput19', 'JumlahPenduduk', 'Kemiskinan', 'Pendapatan']]
 y = data[['Class']]
 
 X_train, X_test, y_train, y_test = train_test_split(X,y,test_size=0.2)
@@ -34,7 +34,7 @@ print(clf.predict(X_test))
 print(y_test)
 print(clf.score(X_test, y_test))
 
-
+# melihat plot data X dan Y
 plt.scatter(data['Class'], data['JumlahPenduduk'], edgecolors='pink')
 plt.scatter(data['Class'], data['Kemiskinan'], edgecolors='brown')
 plt.scatter(data['Class'], data['Pendapatan'], edgecolors='grey')
